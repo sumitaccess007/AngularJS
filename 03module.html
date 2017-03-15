@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <title>Module</title>
+    </head>
+    <body ng-app="myApp">
+        
+        <div ng-controller="AppCtrl">
+        <input type="text" ng-model="name"/>  
+       <button ng-click="add()"> + </button>
+        <h3>{{result}}</h3>
+    </div>
+        
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.3/angular.min.js"></script>
+
+        <script>
+            var app =  angular.module('myApp', []);
+            app.controller('AppCtrl', function($scope)
+            {
+                $scope.add = function()
+                {
+                    $scope.result = $scope.name.split('').reverse().join('');
+                }
+            })
+    </script>
+        
+    </body>
+</html>                                                                                                                                                                                                                                                                                                                                                 

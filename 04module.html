@@ -1,0 +1,36 @@
+<html>
+<head>
+    <title>Ng-Repeat</title>
+</head>
+<body ng-app="myApp">
+    <div ng-controller="AppCtrl">
+        <input type="text" ng-model="fruit"/>
+        <input type="text" ng-model="quantity"/>
+        <button ng-click="addFruit()">Add</button>
+        
+        <table border="1">
+                <tr>
+                    <td ng-repeat="fruit in fruits">{{fruit}}</td>
+                    <td ng-repeat="fruit in fruits">{{quantity}}</td>
+                </tr>
+        </table> 
+
+        
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.3/angular.min.js"></script>
+
+    <script>
+        var app = angular.module('myApp', []);
+        app.controller('AppCtrl', function($scope){
+            $scope.name = ['Apple', 'Oranges', 'Grapes']
+            $scope.quantity = ['Apple', 'Oranges', 'Grapes']
+            $scope.addFruit = function()
+            {
+                $scope.fruits.push($scope.fruit)
+            }
+        })
+    </script>
+</body>
+</html>
+           

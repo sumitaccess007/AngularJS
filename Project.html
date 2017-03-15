@@ -1,0 +1,51 @@
+<html>
+<head>
+    <title>To-Do List</title>
+    
+    <style type="text/css">
+    .close {
+                background:url(http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/images/ui-icons_222222_256x240.png) NO-REPEAT -96px -128px;
+                text-indent:-10000px;
+                width:15px;
+                height:15px;
+            }
+    </style>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.3.1/css/foundation.css"/>
+    
+</head>
+<body ng-app="myApp">
+    
+    <div ng-controller="AppCtrl">
+        <input type="text" ng-model="task"/>
+        <button ng-click="addTask()">Add</button>
+
+        <table border="1">
+            <tr ng-repeat="t in tasks">
+                <td>{{$index+1}}</td>
+                <td>{{t}}</td>
+                <td><button ng-click="remove($index)" class="close" value="close"></button></td>
+            </tr>
+        </table>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.3/angular.min.js"></script>
+
+    <script>
+        var app = angular.module('myApp', []);
+        app.controller('AppCtrl', function($scope)
+        {
+            $scope.tasks=[];
+            $scope.addTask = function()
+            {
+                $scope.tasks.push($scope.task)
+                $scope.task="";
+            }
+            $scope.remove = function(index)
+            {
+                $scope.tasks.splice(index,1)
+            }
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <title>Module</title>
+    </head>
+    <body ng-app="myApp">
+        {{message}} {{x}}
+        <h1>Basic Calculator</h1>
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.3/angular.min.js"></script>
+
+        <script>
+        var app=angular.module('myApp',[]);
+        
+        app.run(function($rootScope)
+        {
+        $rootScope.message="Good Morning"
+        $rootScope.x=345;
+        console.log('Module Created');
+        }
+        )
+        </script>
+    </body>
+</html>                                                                                                                                                                                                                                                                                                                                                 

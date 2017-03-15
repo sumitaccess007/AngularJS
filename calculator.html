@@ -1,0 +1,43 @@
+<html>
+    <head>
+        <title>Basic</title>
+    </head>
+    <body>
+        <h1>Basic Calculator</h1>
+        
+        <input type="number" id="val1"></br>
+        <input type="number" id="val2"></br>
+    
+        <button onclick="add()">Add</button>
+        <button onclick="multiply()">Multiply</button>
+    
+        <div id="add"></div>
+        <div id="multiply"></div>
+    
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+
+        <script>
+            
+            function add()
+            {
+                                
+                var x=$('#val1').val();
+                console.log(x);
+                
+                var y=($('#val2').val())
+                console.log(y);
+                
+                var result1=parseInt(x)+parseInt(y);
+                console.log('clicked...');
+                console.log('Sum is:' + result1);
+                
+                var result2=parseInt(x)*parseInt(y);
+                console.log('clicked...');
+                console.log('Multiplication is:' + result2);
+                
+                $('#add').html('<h3>Sum is : </h3>' +result1);
+                $('#multiply').html('<h3>Multiplication is : </h3>' +result2);
+            }
+        </script>
+    </body>
+</html>
